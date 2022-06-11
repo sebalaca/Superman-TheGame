@@ -23,10 +23,11 @@ const jugar = () => {
       kryptonite.y += 5;
       kryptonite.dibujar();
       if (superman.detectarColision(kryptonite)) {
+        kryptonite.borrar();
         gameOver.dibujar();
         setTimeout(() => {
             jugar
-        }, 6000);
+        }, 8000);
 
       }
     }
@@ -34,7 +35,7 @@ const jugar = () => {
   
   //Crea los objetos Kriptonitas aleatoriamente
   const crearkryptonites = () => {
-    const randomPositionX = Math.floor(Math.random() * 280);
+    const randomPositionX = Math.floor(Math.random() * 180);
     const kryptonite = new Objeto(
       randomPositionX,
       10,
