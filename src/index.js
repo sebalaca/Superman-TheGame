@@ -25,8 +25,8 @@ const jugar = () => {
       if (superman.detectarColision(kryptonite)) {
         kryptonite.borrar();
         gameOver.dibujar();
-        setTimeout(() => {
-            jugar
+        setTimeout(() => {     //la pantalla de game over no queda bien, siguen saliendo Kriptonitas
+            jugar();
         }, 8000);
 
       }
@@ -35,7 +35,7 @@ const jugar = () => {
   
   //Crea los objetos Kriptonitas aleatoriamente
   const crearkryptonites = () => {
-    const randomPositionX = Math.floor(Math.random() * 180);
+    const randomPositionX = Math.floor(Math.random() * 580);
     const kryptonite = new Objeto(
       randomPositionX,
       10,
@@ -53,21 +53,33 @@ const jugar = () => {
     setInterval(crearkryptonites, 4000);
   };
 
-  const moverSuperman = (e) => {
+  const moverSuperman = (e) => {   //consultar como evitar rebote de imagen en lado derecho e inferior
     superman.borrar();
     if (e.key === "ArrowLeft") {
       superman.x -= 5;
-    }
-    if (e.key === "ArrowRight") {
-      superman.x += 5;
-    }
-    if (e.key === "ArrowUp") {
-      superman.y -= 5;
-    }
-    if (e.key === "ArrowDown") {
-      superman.y += 5;
+    }if (superman.x < 0) {
+        superman.x = superman.x + 5;
     }
     
+    if (e.key === "ArrowRight") {
+      superman.x += 5;
+    }if (superman.x > 600) {
+        superman.x = superman.x - 60; //La imagen rebota no se detiene
+    }
+
+    if (e.key === "ArrowUp") {
+      superman.y -= 5;
+    }if (superman.y < 0) {
+        superman.y = superman.y + 5;
+    }
+
+    if (e.key === "ArrowDown") {
+      superman.y += 5;
+    }if (superman.y > 600) {
+        superman.y = superman.y - 150; //La imagen rebota no se detiene
+    }
+
+
     superman.dibujar();
   };
 

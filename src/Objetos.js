@@ -48,5 +48,4 @@ class Objeto {
     
         return "colision";
         };
-
 }
