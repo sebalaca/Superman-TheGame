@@ -6,9 +6,7 @@ class Game {
       this.bg.src = "../images/background.jpg";
       this.player = new Player(270,450);
       this.kryptoArr = [];
-    //   this.KryptoCollision = 75;
       this.isGameOn = true;
-    //   this.intervalId;
     
     }
   

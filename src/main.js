@@ -5,14 +5,13 @@ let gameOverScreen = document.querySelector("#gameover-screen");
 let canvas = document.querySelector("#my-canvas");
 let ctx = canvas.getContext("2d");
 let newGame;
-// let songs = document.getElementById("songs");
-// let finalScore = document.getElementById("finalScore");
+let songs = document.getElementById("songs");
 
 // * STATE MANAGEMENT FUNCTIONS
 const startGame = () => {
-  // songs.play();
-  // songs.volume = 0.1;
-  // songs.loop = true;
+  songs.play();
+  songs.volume = 0.1;
+  songs.loop = true;
   gameIntro.style.display = "none";
   canvas.style.display = "flex";
   canvas.style.backgroundColor = "lightblue";
