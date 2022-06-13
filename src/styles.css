@@ -1,3 +1,41 @@
 body {
+  margin: 0;
+  background-color: lightgray;
   font-family: sans-serif;
+}
+
+#my-canvas {
+  background-color: darkgray;
+}
+
+#start-btn,
+#restart-btn {
+  background-color: rgb(255, 0, 0);
+  color: rgb(6, 6, 6);
+  padding: 20px;
+  font-size: 30px;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+#my-canvas,
+#gameover-screen {
+  display: none;
+}
+
+.finalScore {
+  font-size: 8em;
+}
+
+#instructions {
+  font-size: 30px;
 }

@@ -1,6 +1,9 @@
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
+let intervalIdKripto = '';
+let intervalIdJugar = '';
+
 canvas.style.backgroundColor = "lightblue";
 
 let supermanImage = new Image();
@@ -14,7 +17,9 @@ gameOverImage.src = "../images/superman-game-over1.png";
 
 let superman = new Objeto(250, 450, 60, 150, supermanImage, ctx);
 let kryptonitesObjects = [];
-let gameOver = new Objeto(0,0,600,600,gameOverImage,ctx)
+let gameOver = new Objeto(0,0,600,600,gameOverImage,ctx);
+
+let gameRuning = true;
 
 const jugar = () => {
     //detecta colision de superman y Kriptonitas
@@ -23,15 +28,23 @@ const jugar = () => {
       kryptonite.y += 5;
       kryptonite.dibujar();
       if (superman.detectarColision(kryptonite)) {
-        kryptonite.borrar();
+        gameRuning = false;
+        clearCanvas();
         gameOver.dibujar();
-        setTimeout(() => {     //la pantalla de game over no queda bien, siguen saliendo Kriptonitas
-            jugar();
-        }, 8000);
-
+        //kryptonite.borrar();
+        clearInterval(intervalIdKripto)
+        clearInterval(intervalIdJugar)
+        //console.log(intervalIdKripto)
+        //console.log(intervalIdJugar)
+        if(gameRuning = true){
+            setTimeout(() => {              //la pantalla de game over no queda bien, siguen saliendo Kriptonitas
+                jugar();
+            }, 8000);
+        }
+  
       }
     }
-  };
+};
   
   //Crea los objetos Kriptonitas aleatoriamente
   const crearkryptonites = () => {
@@ -48,13 +61,20 @@ const jugar = () => {
   };
 
   const cargaInicial = () => {
-    superman.dibujar();
-    setInterval(jugar, 200);
-    setInterval(crearkryptonites, 4000);
+    console.log(gameRuning)
+    if(gameRuning = true){
+        superman.dibujar();
+        //console.log(intervalIdJugar);
+        intervalIdJugar = setInterval(jugar, 200);
+        intervalIdKripto = setInterval(crearkryptonites, 4000);
+    }
+  
   };
 
   const moverSuperman = (e) => {   //consultar como evitar rebote de imagen en lado derecho e inferior
     superman.borrar();
+    if(gameRuning === true) {
+
     if (e.key === "ArrowLeft") {
       superman.x -= 5;
     }if (superman.x < 0) {
@@ -63,8 +83,8 @@ const jugar = () => {
     
     if (e.key === "ArrowRight") {
       superman.x += 5;
-    }if (superman.x > 600) {
-        superman.x = superman.x - 60; //La imagen rebota no se detiene
+    }if (superman.x > 540) {
+        superman.x = 600 - 60; //La imagen rebota no se detiene
     }
 
     if (e.key === "ArrowUp") {
@@ -75,14 +95,18 @@ const jugar = () => {
 
     if (e.key === "ArrowDown") {
       superman.y += 5;
-    }if (superman.y > 600) {
-        superman.y = superman.y - 150; //La imagen rebota no se detiene
+    }if (superman.y > 450) {
+        superman.y = 600 - 150;
     }
 
-
+    }
     superman.dibujar();
   };
 
+  const clearCanvas = () => {
+    console.log("Hola")
+    ctx.clearRect(0,0,600,600);
+  } 
   
 
 window.addEventListener("load", cargaInicial);
