@@ -4,7 +4,7 @@ class superLogo {
       this.x = x;
       this.y = -10;
       this.width = 40;
-      this.height = 50;
+      this.height = 40;
       this.directionY = 1;
       this.velocityY = 3;
       this.img = document.getElementById("superLogo")

@@ -13,7 +13,7 @@ class Krypto {
   
     // 1. Draw
     drawKrypto = (ctx) => {
-      console.log("IMAGE",this.img)
+      // console.log("IMAGE",this.img)
       ctx.drawImage(this.img, this.x, this.y,this.width, this.height);
     };
     

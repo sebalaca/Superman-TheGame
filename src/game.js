@@ -8,6 +8,7 @@ class Game {
     this.kryptoArr = [];
     this.superLogoArr = [];
     this.isGameOn = true;
+    this.score = new Score();
   }
 
   drawBackground = () => {
@@ -39,6 +40,14 @@ class Game {
     }
   };
 
+  //Audio de logos al tocar
+  createLogoSound = () => {
+    let audio = document.createElement("audio");
+    audio.src = "../audio/logo-coin.mp3";
+    audio.play();
+    audio.volume = 0.1;
+  };
+
   checkPlayerLogoCollision = (logo) => {
     if (
       this.player.x < logo.x + logo.width &&
@@ -46,9 +55,12 @@ class Game {
       this.player.y < logo.y + logo.height &&
       this.player.height + this.player.y > logo.y
     ) {
-      this.isGameOn = false;
-      canvas.style.display = "none";
-      gameOverScreen.style.display = "flex";
+      this.createLogoSound();
+      const superLogoIndex = this.superLogoArr.indexOf(logo);
+      this.superLogoArr.splice(superLogoIndex, 1);
+      this.score.value = this.score.value + 100;
+      
+
     }
   };
 
@@ -91,6 +103,8 @@ class Game {
     this.superLogoArr.forEach((logo) => {
       logo.drawsuperLogo(this.ctx);
     });
+
+    this.score.drawScore();
 
     this.player.drawPlayer();
 
