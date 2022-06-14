@@ -25,17 +25,22 @@ body {
   justify-content: center;
   align-items: center;
   margin: 50px;
+  
 }
 
 #my-canvas,
 #gameover-screen {
   display: none;
-}
-
-.finalScore {
-  font-size: 8em;
+  border: 5px solid darkblue;
+  height: 600px;
+  width: 600px;
 }
 
 #instructions {
   font-size: 30px;
 }
+
+#gameover{
+border: 5px solid darkblue;
+height: 600px;
+width: 600px;}
