@@ -7,7 +7,7 @@ class Player {
     this.width = 60;
     this.height = 150;
     this.img = new Image();
-     this.img.src = "../images/superman-flying.png";
+     this.img.src = "./../images/superman-flying.png";
   }
 
   // Methods
