@@ -8,6 +8,8 @@ class Krypto {
       this.directionY = 1;
       this.velocityY = 3;
       this.img = document.getElementById("kripto")
+      // this.img = new Image();
+      // this.imga.src = "./images/kryptonite.png";
     }
   
   
