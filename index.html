@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Superman - The Video Game</title>
-    <link rel="stylesheet" href="./../styles.css" />
+    <link rel="stylesheet" href="../Superman-TheGame/styles.css" />
     
   </head>
   <body>
     <div class="container">
       
       <!-- INTRO -->
-      <audio id="songs" src="./../audio/Superman_Arcade_Music.mp3" type="audio/mpeg"></audio>
+      <audio id="songs" src="../Superman-TheGame/audio/Superman_Arcade_Music.mp3" type="audio/mpeg"></audio>
       <div id="game-intro" class="container">
-        <img src="./../images/superman-intro-game.png" width="600" height="600px"  alt="logo"/>
+        <img src="../Superman-TheGame/images/superman-intro-game.png" width="600" height="600px"  alt="logo"/>
         <br />
         <button id="start-btn">Start!</button>
         <p id="instructions">Movement: Use arrows keys ← ↑ ↓ → </p>
@@ -22,22 +22,22 @@
 
       <!-- GAME SCREEN -->
       <canvas id="my-canvas" width="600px" height="600px"></canvas>
-      <img id="superLogo" style="display:none;" src="./../images/superLogo.png"/>
-      <img id="kripto" style="display:none;" src="./images/kryptonite.png"/>
+      <img id="superLogo" style="display:none;" src="../Superman-TheGame/images/superLogo.png"/>
+      <img id="kripto" style="display:none;" src="../Superman-TheGame/images/kryptonite.png"/>
 
       <!-- GAME OVER SCREEN -->
       <div id="gameover-screen" class="container">
-        <img id="gameover" src="./../images/superman-game-over1.png" width="600" height="600px" alt="logo" />
+        <img id="gameover" src="../Superman-TheGame/images/superman-game-over1.png" width="600" height="600px" alt="logo" />
         <button id="restart-btn">Play Again!</button>
       </div>
     </div>
 
-    <script src="./../src/main.js"></script>
-    <script src="./../src/game.js"></script>
-    <script src="./../src/superman.js"></script>
-    <script src="./../src/kryptonite.js"></script>
-    <script src="./../src/superLogo.js"></script>
-    <script src="./../src/score.js"></script>
+    <script src="../Superman-TheGame/src/main.js"></script>
+    <script src="../Superman-TheGame/src/game.js"></script>
+    <script src="../Superman-TheGame/src/superman.js"></script>
+    <script src="../Superman-TheGame/src/kryptonite.js"></script>
+    <script src="../Superman-TheGame/src/superLogo.js"></script>
+    <script src="../Superman-TheGame/src/score.js"></script>
    
   </body>
 </html>
