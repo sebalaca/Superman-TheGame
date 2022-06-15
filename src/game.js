@@ -3,7 +3,7 @@ class Game {
     //Game properties
     this.ctx = ctx;
     this.bg = new Image();
-    this.bg.src = "./images/background.jpg";
+    this.bg.src = "./../images/background.jpg";
     this.player = new Player(270, 450);
     this.kryptoArr = [];
     this.superLogoArr = [];
