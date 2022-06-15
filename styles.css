@@ -12,9 +12,9 @@ body {
 #restart-btn {
   background-color: rgb(255, 0, 0);
   color: rgb(6, 6, 6);
-  padding: 20px;
+  padding: 10px;
   font-size: 30px;
-  margin-top: 20px;
+  margin-top: 5px;
   border-radius: 10px;
   font-family: sans-serif;
 }
