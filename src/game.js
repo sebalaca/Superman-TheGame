@@ -43,7 +43,7 @@ class Game {
   //Audio de logos al tocar
   createLogoSound = () => {
     let audio = document.createElement("audio");
-    audio.src = "./audio/logo-coin.mp3";
+    audio.src = "./../audio/logo-coin.mp3";
     audio.play();
     audio.volume = 0.1;
   };
